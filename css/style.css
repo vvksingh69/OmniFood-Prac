@@ -58,9 +58,11 @@ body {
   color: #555;
 }
 
-.test {
-  background-color: red;
-  padding: 10rem;
-  /* width: 1000px; */
-  max-width: 100rem;
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-img {
+  width: 100%;
 }
