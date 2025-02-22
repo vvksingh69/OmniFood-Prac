@@ -122,7 +122,6 @@ body {
 }
 
 .section-how {
-  background-color: orangered;
   padding: 9.6px 0;
 }
 
@@ -131,27 +130,6 @@ body {
   max-width: 130rem;
   padding: 0 3.2rem;
   margin: 0 auto;
-}
-
-.section-how div {
-  padding: 100px;
-  font-size: 50px;
-}
-
-.section-how div:nth-child(1) {
-  background-color: aqua;
-}
-
-.section-how div:nth-child(2) {
-  background-color: blue;
-}
-
-.section-how div:nth-child(3) {
-  background-color: violet;
-}
-
-.section-how div:nth-child(4) {
-  background-color: yellow;
 }
 
 .grid {
@@ -305,4 +283,8 @@ as here , we want to select 'nav-cta' class of 'main-nav-link' , we simply do th
 .delivered-text span {
   color: #c7f11f;
   font-weight: 700;
+}
+
+.step-img {
+  width: 50%;
 }
