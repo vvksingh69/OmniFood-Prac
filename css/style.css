@@ -18,7 +18,13 @@ Bold: 700
 - Line Heights:
 Default: 1
 Small: 1.05
+Medium: 1.2
 Pargraph default: 1.6
+
+- Letter Spacing:
+-0.5px
+0.75px
+
 
 
 --- 02 COLORS
@@ -67,13 +73,27 @@ body {
 /******************************/
 /* GENERAL RESUABLE COMPONENTS */
 /*****************************/
-.heading-primary {
-  font-size: 5.2rem;
+
+/*we are moving common styles from heading primary and secondary to a new selector here*/
+.heading-primary,
+.heading-secondary {
   font-weight: 700;
-  line-height: 1.05;
   color: #333;
   letter-spacing: -0.5px; /* this controls the spacing between the letters , we made it using pixel , because this is very small and we can make it absolute.*/
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  /*We are refering to the style topography as secondary heading has to be smaller than primary heading
+  we select next small size from the Font size systems above */
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
 }
 
 .btn:link,
