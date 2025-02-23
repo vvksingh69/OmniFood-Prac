@@ -1,177 +1,3 @@
-/*
-
---- 01 TYPOGRAPHY SYSTEM
-
-- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-
-- FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- Font Weights:
-Default: 400
-Medium: 500
-Semi-bold: 600
-Bold: 700
-
-- Line Heights:
-Default: 1
-Small: 1.05
-Medium: 1.2
-Pargraph default: 1.6
-
-- Letter Spacing:
--0.5px
-0.75px
-
-
-
---- 02 COLORS
-- Primary: #e67e22
-- Tints: #fdf2e9
-- Shades: #c7f11f
-- Accents:
-- Greys:
-#555
-#333
-
-
---- 03 SHADOWS
-
---- 04 BORDER-RADIUS
-Default: 9px;
-
---- 05 WHITESPACE
-
-- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-
-*/
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* font-size: 10px;
-  10px/16px = 0.625 = 62.5%
-  Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  color: #555;
-}
-
-/******************************/
-/* GENERAL RESUABLE COMPONENTS */
-/*****************************/
-
-/*we are moving common styles from heading primary and secondary to a new selector here*/
-.heading-primary,
-.heading-secondary {
-  font-weight: 700;
-  color: #333;
-  letter-spacing: -0.5px; /* this controls the spacing between the letters , we made it using pixel , because this is very small and we can make it absolute.*/
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
-}
-
-.heading-secondary {
-  /*We are refering to the style topography as secondary heading has to be smaller than primary heading
-  we select next small size from the Font size systems above */
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 9.6rem;
-}
-
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  color: #fff;
-  font-size: 2rem;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: 600;
-
-  /* Put transition on original state*/
-  transition: all 0.3s;
-}
-
-.btn--full:link,
-.btn--full:visited {
-  background-color: #e67e22;
-}
-
-.btn--full:hover,
-.btn--full:active {
-  background-color: #c7f11f;
-}
-
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: #fff;
-  color: #555;
-}
-
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: #fdf2e9;
-
-  /** this makes the entire content jump , therefore we will not use it
-  border: 2px solid #fff; */
-
-  /*Alternate of the above , without the jumping issue */
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.margin-right-sm {
-  margin-right: 1.6rem !important;
-}
-
-.section-how {
-  padding: 9.6px 0;
-}
-
-.container {
-  /* 1140px */
-  max-width: 130rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-
-.grid--2--cols {
-  /* This is exact same as grid-template-columns: 1fr 1fr */
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3--cols {
-  /* This is exact same as grid-template-columns: 1fr 1fr 1fr */
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid--4--cols {
-  /* This is exact same as grid-template-columns: 1fr 1fr 1fr 1fr */
-  grid-template-columns: repeat(4, 1fr);
-}
-
 /*********************************/
 /*HEADER*/
 /********************************/
@@ -305,6 +131,68 @@ as here , we want to select 'nav-cta' class of 'main-nav-link' , we simply do th
   font-weight: 700;
 }
 
+/********************************************/
+/******** HOW IT WORKS SECTION **************/
+/********************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #eee;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: '';
+  display: block;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.step-img-box::before {
+  width: 60%;
+
+  /* height: 60% */
+
+  /* 60% of parents width */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+
+.step-img-box::after {
+  width: 45%;
+
+  /* height: 50% */
+
+  /* 50% of parents width */
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+  z-index: -1;
+}
+
 .step-img {
-  width: 50%;
+  width: 35%;
 }
